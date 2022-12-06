@@ -1,0 +1,91 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    background: black;
+    color: white;
+}
+
+main {
+    /* border: 2px solid white; */
+    min-height: 70vh;
+}
+
+
+.circle {
+    position: relative;
+    width: 150px;
+    height: 150px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle svg {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    transform: rotate(270deg);
+}
+
+.circle svg circle {
+    width: 100%;
+    height: 100%;
+    fill: transparent;
+    stroke: grey;
+    stroke-width: 4;
+    transform: translate(5px, 5px)
+}
+
+.circle svg circle:nth-child(2) {
+    stroke: var(--clr);
+    stroke-dasharray: 440;
+}
+
+.dots {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+}
+
+.dots::before {
+    content: '';
+    position: absolute;
+    transform: translate(67px, -2px);
+    width: 15px;
+    height: 15px;
+    background: var(--clr);
+    border-radius: 50%;
+    box-shadow: 0 0 20px var(--clr), 0 0 60px var(--clr);
+}
+
+div span {
+    position: absolute;
+    transform: translate(-45%, -5%);
+    font-size: 0.35em;
+    font-weight: 300;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+
+
+.input-container {
+    position: absolute;
+    top: 35%;
+}
+
+.input-container input {
+    width: 100px;
+}
+
+.action-container {
+    position: absolute;
+    bottom: 20%;
+}
